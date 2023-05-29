@@ -28,7 +28,7 @@
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
-          "template": "{{ .UserName }}@{{ .HostName }}",
+          "template": "suzuko@suzu's phone",
           "type": "session"
         },
         {
