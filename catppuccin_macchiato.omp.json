@@ -28,7 +28,7 @@
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
-          "template": "{{ .UserName }}@{{ $a := split \".\" .HostName }}{{ $a._0 }}",
+          "template": "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ $truncated_hostname._0 }}",
           "type": "session"
         },
         {
