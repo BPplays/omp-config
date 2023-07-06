@@ -28,7 +28,7 @@
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
-          "template": "{{ .UserName }}@{{ trunc 5 . HostName }}",
+          "template": " {{ trunc 5 . HostName }} ",
           "type": "session"
         },
         {
