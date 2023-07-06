@@ -26,12 +26,9 @@
         {
           "background": "p:blue",
           "foreground": "p:text",
-          "properties": {
-            "display_host": false
-          },
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
-          "template": "{{ .UserName }}@{{ .HostName }}",
+          "template": "{{ .UserName }}@{{ trunc 5 . HostName }}",
           "type": "session"
         },
         {
