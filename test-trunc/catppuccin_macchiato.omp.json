@@ -35,12 +35,13 @@
           "background": "p:pink",
           "foreground": "p:text",
           "properties": {
-            "folder_icon": "\uf115 ",
+            "folder_icon": ".\ue5fe.",
             "home_icon": "~",
             "style": "agnoster_short"
           },
           "powerline_symbol": "\ue0b4",
           "style": "powerline",
+      // "template": "{{ $cur_path := .Path }}{{ $cur_os_dir :=osDir \"windows\\\\linux\"}}{{ $proc_path := osDir $cur_path}}{{ if eq $cur_os_dir \"windows\" }}{{$proc_path = cat $proc_path \"\\\\\"}}{{ else }}{{$proc_path = cat $proc_path \"/\"}}{{ end }}{{dir_base := osBase $cur_path}}{{$proc_path = cat $proc_path $dir_base}}{{$proc_path}}",
           "template": " {{ .Path }}",
           "type": "path"
         },
