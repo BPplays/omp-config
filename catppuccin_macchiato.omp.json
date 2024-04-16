@@ -35,7 +35,7 @@
         "crust": "#11111b",
 
 
-        "clock": "p:peach",
+        "clock": "p:teal",
         "inv_text": "p:surface0",
         "logo_color": "p:wight"
   },
@@ -121,6 +121,16 @@
           "background": "p:clock",
           "properties": {
             "shell": "sh",
+            "command": "sec -ls"
+          }
+        },
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "p:inv_text",
+          "background": "p:clock",
+          "properties": {
+            "shell": "win_elvish",
             "command": "sec -ls"
           }
         },
