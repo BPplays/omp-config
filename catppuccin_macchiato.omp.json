@@ -2,13 +2,42 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
         "os": "#ACB0BE",
-        "pink-old": "#f5c2e7",
-        "pink": "#cba6f7",
-        "lavender": "#b4befe",
-        "blue":  "#89b4fa",
+
         "wight": "#FFFFFF",
         "wight-old": "#cdd6f4",
-        "text": "#45475a"
+
+
+        "rosewater": "#f5e0dc",
+        "flamingo": "#f2cdcd",
+        "pink": "#f5c2e7",
+        "mauve": "#cba6f7",
+        "red": "#f38ba8",
+        "maroon": "#eba0ac",
+        "peach": "#fab387",
+        "yellow": "#f9e2af",
+        "green": "#a6e3a1",
+        "teal": "#94e2d5",
+        "sky": "#89dceb",
+        "sapphire": "#74c7ec",
+        "blue": "#89b4fa",
+        "lavender": "#b4befe",
+        "text": "#cdd6f4",
+        "subtext1": "#bac2de",
+        "subtext0": "#a6adc8",
+        "overlay2": "#9399b2",
+        "overlay1": "#7f849c",
+        "overlay0": "#6c7086",
+        "surface2": "#585b70",
+        "surface1": "#45475a",
+        "surface0": "#313244",
+        "base": "#1e1e2e",
+        "mantle": "#181825",
+        "crust": "#11111b",
+
+
+        "clock": "p:peach",
+        "inv_text": "p:surface0",
+        "logo_color": "p:wight"
   },
   "blocks": [
     {
@@ -16,7 +45,7 @@
       "segments": [
         {
           "background": "p:blue",
-          "foreground": "p:wight",
+          "foreground": "p:logo_color",
           "powerline_symbol": "\ue0b4",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
@@ -25,15 +54,15 @@
         },
         {
           "background": "p:blue",
-          "foreground": "p:text",
+          "foreground": "p:inv_text",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
           "template": "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ $truncated_hostname._0 }}",
           "type": "session"
         },
         {
-          "background": "p:pink",
-          "foreground": "p:text",
+          "background": "p:mauve",
+          "foreground": "p:inv_text",
           "properties": {
             "folder_icon": "\uf115 ",
             "home_icon": "~",
@@ -46,7 +75,7 @@
         },
         {
           "background": "p:lavender",
-          "foreground": "p:text",
+          "foreground": "p:inv_text",
           "style": "powerline",
           "properties": {
             "branch_icon": "\ue725 ",
@@ -63,6 +92,77 @@
           "powerline_symbol": "\ue0b4",
           "template": " {{ .HEAD }}",
           "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:clock",
+          "powerline_symbol": "\ue0b4",
+          "style": "plain",
+          "template": "\ue0b6",
+          "type": "text"
+        },
+        {
+          "foreground": "p:inv_text",
+          "background": "p:clock",
+          "style": "plain",
+          "template": "秒",
+          "type": "text"
+        },
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "p:inv_text",
+          "background": "p:clock",
+          "properties": {
+            "shell": "sh",
+            "command": "sec -ls"
+          }
+        },
+        {
+          "foreground": "p:clock",
+          "style": "plain",
+          "template": "\ue0b4 ",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#cd5e42",
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
+        },
+        {
+          "foreground": "p:pink",
+          "powerline_symbol": "\ue0b4",
+          "style": "plain",
+          "template": "\ue0b6",
+          "type": "text"
+        },
+        {
+          "foreground": "p:inv_text",
+          "background": "p:pink",
+          "powerline_symbol": "\ue0b4",
+          "style": "plain",
+          "template": ">",
+          "type": "text"
+        },
+        {
+          "foreground": "p:pink",
+          "powerline_symbol": "\ue0b4",
+          "style": "plain",
+          "template": "\ue0b4",
+          "type": "text"
         }
       ],
       "type": "prompt"
