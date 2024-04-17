@@ -85,6 +85,9 @@
           "background": "p:git_color",
           "foreground": "p:inv_text",
           "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+        
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -97,50 +100,34 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4 ",
           "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "type": "git"
         },
         {
-          "foreground": "p:clock",
-          "powerline_symbol": "\ue0b4",
-          "style": "plain",
-          "template": "\ue0b6",
-          "type": "text"
-        },
-        {
-          "foreground": "p:inv_text",
-          "background": "p:clock",
-          "style": "plain",
-          "template": "秒",
-          "type": "text"
-        },
-        {
           "type": "command",
-          "style": "plain",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:clock",
           "properties": {
             "shell": "sh",
             "command": "sec -ls"
-          }
+          },
+          "template": "秒{{ .Output }}"
         },
         {
           "type": "command",
-          "style": "plain",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:clock",
           "properties": {
             "shell": "win_elvish",
             "command": "sec -ls"
-          }
-        },
-        {
-          "foreground": "p:clock",
-          "style": "plain",
-          "template": "\ue0b4 ",
-          "type": "text"
+          },
+          "template": "秒{{ .Output }}"
         }
       ]
     },
