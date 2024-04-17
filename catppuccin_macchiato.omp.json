@@ -1,14 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "term": {
-    "width": "0",
-    "height": "0"
+  "var": {
+    "golang": ""
   },
   "palette": {
         "os": "#ACB0BE",
 
-        "wight": "#FFFFFF",
-        "wight-old": "#cdd6f4",
+        "ff_white": "#FFFFFF",
 
 
         "rosewater": "#f5e0dc",
@@ -41,8 +39,11 @@
 
         "clock": "p:teal",
         "inv_text": "p:surface0",
-        "logo_color": "p:wight",
-        "git_color": "p:lavender"
+        "logo_color": "p:ff_white",
+        "git_color": "p:lavender",
+        "golang_color": "p:sapphire",
+        "rust_color": "p:peach",
+        "py_color": "p:yellow"
   },
   "blocks": [
     {
@@ -95,6 +96,36 @@
       "type": "prompt",
       "alignment": "right",
       "segments": [
+        {
+          "background": "p:py_color",
+          "foreground": "p:inv_text",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "properties": {
+            "extensions": ["*.py", "*.ipynb", "pyproject.toml", "venv.bak"]
+          },
+          "template": "<p:ff_white>\ue235 </>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "python"
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:inv_text",
+          "background": "p:golang_color",
+          "template": "<p:ff_white></>{{ .Full }}"
+        },
+        {
+          "type": "rust",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:inv_text",
+          "background": "p:rust_color",
+          "template": "<p:ff_white></>{{ .Full }}"
+        },
         {
           "background": "p:git_color",
           "foreground": "p:inv_text",
