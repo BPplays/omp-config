@@ -82,16 +82,9 @@
       "alignment": "right",
       "segments": [
         {
-          "foreground": "p:git_color",
-          "powerline_symbol": "\ue0b4",
-          "style": "plain",
-          "template": "\ue0b6",
-          "type": "text"
-        },
-        {
           "background": "p:git_color",
           "foreground": "p:inv_text",
-          "style": "powerline",
+          "style": "diamond",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -104,14 +97,10 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
-          "template": " {{ .HEAD }}",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "type": "git"
-        },
-        {
-          "foreground": "p:git_color",
-          "style": "plain",
-          "template": "\ue0b4 ",
-          "type": "text"
         },
         {
           "foreground": "p:clock",
