@@ -1,5 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "term": {
+    "width": "0",
+    "height": "0"
+  },
   "palette": {
         "os": "#ACB0BE",
 
@@ -58,7 +62,17 @@
           "foreground": "p:inv_text",
           "powerline_symbol": "\ue0b4",
           "style": "diamond",
+          "min_width": 80,
           "template": "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ $truncated_hostname._0 }}",
+          "type": "session"
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:inv_text",
+          "powerline_symbol": "\ue0b4",
+          "style": "diamond",
+          "max_width": 79,
+          "template": "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ trunc 5 $truncated_hostname._0 }}",
           "type": "session"
         },
         {
@@ -85,7 +99,7 @@
           "background": "p:git_color",
           "foreground": "p:inv_text",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
+          "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4 ",
         
           "properties": {
@@ -106,7 +120,7 @@
         {
           "type": "command",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
+          "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:clock",
@@ -114,12 +128,13 @@
             "shell": "sh",
             "command": "sec -ls"
           },
+          "min_width": 80,
           "template": "秒{{ .Output }}"
         },
         {
           "type": "command",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
+          "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:clock",
@@ -127,7 +142,23 @@
             "shell": "win_elvish",
             "command": "sec -ls"
           },
+          "min_width": 80,
           "template": "秒{{ .Output }}"
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:inv_text",
+          "background": "p:mauve",
+          "template": " <p:inv_text></> {{ .FormattedMs }} ",
+          "max_width": 79,
+          "properties": {
+            "threshold": 500,
+            "style": "amarillo",
+            "always_enabled": true
+          }
         }
       ]
     },
@@ -136,31 +167,12 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#cd5e42",
-          "style": "plain",
-          "template": "\ue3bf ",
-          "type": "root"
-        },
-        {
-          "foreground": "p:pink",
-          "powerline_symbol": "\ue0b4",
-          "style": "plain",
-          "template": "\ue0b6",
-          "type": "text"
-        },
-        {
           "foreground": "p:inv_text",
           "background": "p:pink",
-          "powerline_symbol": "\ue0b4",
-          "style": "plain",
-          "template": ">",
-          "type": "text"
-        },
-        {
-          "foreground": "p:pink",
-          "powerline_symbol": "\ue0b4",
-          "style": "plain",
-          "template": "\ue0b4",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{if .Root }}{{ end }}>",
           "type": "text"
         }
       ],
