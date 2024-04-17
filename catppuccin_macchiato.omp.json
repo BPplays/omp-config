@@ -37,7 +37,8 @@
 
         "clock": "p:teal",
         "inv_text": "p:surface0",
-        "logo_color": "p:wight"
+        "logo_color": "p:wight",
+        "git_color": "p:lavender"
   },
   "blocks": [
     {
@@ -72,9 +73,23 @@
           "style": "powerline",
           "template": " {{ .Path }}",
           "type": "path"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:git_color",
+          "powerline_symbol": "\ue0b4",
+          "style": "plain",
+          "template": "\ue0b6",
+          "type": "text"
         },
         {
-          "background": "p:lavender",
+          "background": "p:git_color",
           "foreground": "p:inv_text",
           "style": "powerline",
           "properties": {
@@ -89,17 +104,15 @@
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 "
           },
-          "powerline_symbol": "\ue0b4",
           "template": " {{ .HEAD }}",
           "type": "git"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
+        },
+        {
+          "foreground": "p:git_color",
+          "style": "plain",
+          "template": "\ue0b4 ",
+          "type": "text"
+        },
         {
           "foreground": "p:clock",
           "powerline_symbol": "\ue0b4",
