@@ -102,9 +102,9 @@
           "leading_diamond": "\ue0b6",
           "style": "diamond",
           "properties": {
-            "extensions": ["*.py", "*.ipynb", "pyproject.toml", "venv.bak"]
+            "display_mode": "context"
           },
-          "template": "<p:ff_white>\ue235 </>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "trailing_diamond": "\ue0b4 ",
           "type": "python"
         },
@@ -115,7 +115,7 @@
           "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:golang_color",
-          "template": "<p:ff_white></>{{ .Full }}"
+          "template": "<p:ff_white> </>{{ .Full }}"
         },
         {
           "type": "rust",
@@ -124,7 +124,7 @@
           "trailing_diamond": "\ue0b4 ",
           "foreground": "p:inv_text",
           "background": "p:rust_color",
-          "template": "<p:ff_white></>{{ .Full }}"
+          "template": "<p:ff_white> </>{{ .Full }}"
         },
         {
           "background": "p:git_color",
@@ -157,20 +157,6 @@
           "background": "p:clock",
           "properties": {
             "shell": "sh",
-            "command": "sec -ls"
-          },
-          "min_width": 80,
-          "template": "秒{{ .Output }}"
-        },
-        {
-          "type": "command",
-          "style": "diamond",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4 ",
-          "foreground": "p:inv_text",
-          "background": "p:clock",
-          "properties": {
-            "shell": "win_elvish",
             "command": "sec -ls"
           },
           "min_width": 80,
