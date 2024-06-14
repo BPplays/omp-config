@@ -13,6 +13,7 @@ blocks:
     background: p:blue
     leading_diamond: 
     template: "{{.Icon}} "
+
   - type: session
     style: diamond
     powerline_symbol: 
@@ -20,6 +21,7 @@ blocks:
     background: p:blue
     template: "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ $truncated_hostname._0 }}"
     min_width: 80
+
   - type: session
     style: diamond
     powerline_symbol: 
@@ -27,6 +29,7 @@ blocks:
     background: p:blue
     template: "{{ .UserName }}@{{ $truncated_hostname := split \".\" .HostName }}{{ trunc 5 $truncated_hostname._0 }}"
     max_width: 79
+
   - type: path
     style: powerline
     powerline_symbol: 
@@ -37,6 +40,7 @@ blocks:
       folder_icon: " "
       home_icon: "~"
       style: agnoster_short
+
 - type: prompt
   alignment: right
   segments:
@@ -49,6 +53,7 @@ blocks:
     template:  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}
     properties:
       display_mode: context
+
   - type: go
     style: diamond
     foreground: p:inv_text
@@ -56,6 +61,7 @@ blocks:
     leading_diamond: 
     trailing_diamond: " "
     template: <p:ff_white> </>{{ .Full }}
+
   - type: rust
     style: diamond
     foreground: p:inv_text
@@ -63,6 +69,7 @@ blocks:
     leading_diamond: 
     trailing_diamond: " "
     template: <p:ff_white> </>{{ .Full }}
+
   - type: git
     style: diamond
     foreground: p:inv_text
@@ -81,6 +88,7 @@ blocks:
       rebase_icon: " "
       revert_icon: " "
       tag_icon: " "
+
   - type: command
     style: diamond
     foreground: p:inv_text
@@ -104,6 +112,7 @@ blocks:
       style: amarillo
       threshold: 500.0
     max_width: 79
+
 - type: prompt
   alignment: left
   segments:
@@ -115,6 +124,11 @@ blocks:
     trailing_diamond: 
     template: "{{if .Root }}{{ end }}>"
   newline: true
+
+
+
+
+
 palette:
   base: "#1e1e2e"
   blue: "#89b4fa"
